@@ -12,9 +12,9 @@ dist
 dist-ssr
 *.local
 
-# Fișiere video mari — NU se urcă pe GitHub (peste 100 MB sunt respinse).
-# Hostează videoul pe YouTube/Drive (embed) sau comprimă-l sub 100 MB.
-public/video/*.mp4
+# Master video necomprimat (originalul mare) — se ține LOCAL, nu pe GitHub.
+# Versiunea comprimată pentru web (public/video/*.mp4) SE urcă normal.
+public/video/_source/
 
 # Editor directories and files
 .vscode/*
