@@ -212,6 +212,12 @@ export const durabilityItems = [
   { icon: '🤝', text: 'Noi acorduri de parteneriat cu instituții din țară și din afara ei' },
 ];
 
+export const disseminationLinks = [
+  { label: 'Gimnaziul „Dumitru Matcovschi"', url: 'https://dumitrumatcovschichisinau.educ.md/' },
+  { label: 'Orizont', url: 'https://orizont.org/ro/' },
+  { label: 'Școala Dorohoi', url: 'http://www.scoala8dorohoi.ro/' },
+];
+
 // Întoarce lista de imagini a unui item (suportă `book` cu pagini, `images` sau `img`).
 export function getItemImages(item) {
   if (item.book?.length) return item.book.flatMap((comp) => comp.pages);
