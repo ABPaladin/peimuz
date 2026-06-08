@@ -55,7 +55,7 @@ export default function Gallery() {
           {galleryItems.map((item) => {
             const visible = activeFilter === 'all' || item.cat === activeFilter;
             const images = getItemImages(item);
-            const cover = images[0];
+            const cover = images[0] ?? item.poster;
             return (
               <div
                 key={item.title}
@@ -105,6 +105,16 @@ export default function Gallery() {
                       style={{ background: 'rgba(74,44,10,0.85)', color: 'var(--cream)' }}
                     >
                       ▦ {images.length}
+                    </div>
+                  )}
+
+                  {/* Badge video — semnalează redarea unui clip la click */}
+                  {item.video && (
+                    <div
+                      className="absolute top-3 right-3 flex items-center gap-1 px-2 py-[0.15rem] text-[0.72rem] tracking-wider z-10"
+                      style={{ background: 'var(--red)', color: 'var(--cream)' }}
+                    >
+                      ▶ Video
                     </div>
                   )}
 

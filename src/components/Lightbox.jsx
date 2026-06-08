@@ -20,6 +20,9 @@ export default function Lightbox({ item, onClose }) {
   // Conținut încorporat (ex: hartă Google Maps) afișat în locul imaginii.
   const embed = item?.embed ?? null;
 
+  // Video local (fișier .mp4 din public/video/) afișat în locul imaginii.
+  const video = item?.video ?? null;
+
   const [index, setIndex] = useState(0);
 
   // Reset to first image whenever a different item is opened
@@ -86,7 +89,7 @@ export default function Lightbox({ item, onClose }) {
       onClick={handleBackdrop}
     >
       <div
-        className={`relative w-full p-8 max-h-[92vh] overflow-y-auto ${embed ? 'max-w-205' : 'max-w-175'}`}
+        className={`relative w-full p-8 max-h-[92vh] overflow-y-auto ${embed || video ? 'max-w-205' : 'max-w-175'}`}
         style={{ background: 'var(--parchment)', border: '3px solid var(--gold)' }}
       >
         <button
@@ -101,12 +104,23 @@ export default function Lightbox({ item, onClose }) {
         <div
           className="relative mb-6 flex items-center justify-center overflow-hidden"
           style={{
-            aspectRatio: embed ? '16/9' : containFit ? undefined : '4/3',
+            aspectRatio: embed || video ? '16/9' : containFit ? undefined : '4/3',
             maxHeight: isBook ? '56vh' : containFit ? '62vh' : undefined,
             background: 'var(--cream)',
           }}
         >
-          {embed ? (
+          {video ? (
+            <video
+              src={video}
+              poster={item.poster}
+              controls
+              preload="metadata"
+              className="w-full h-full object-contain"
+              style={{ background: '#000' }}
+            >
+              Browserul tău nu suportă redarea video.
+            </video>
+          ) : embed ? (
             <iframe
               src={embed}
               title={item.embedTitle || item.title}

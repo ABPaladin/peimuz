@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Fișiere video mari — NU se urcă pe GitHub (peste 100 MB sunt respinse).
+# Hostează videoul pe YouTube/Drive (embed) sau comprimă-l sub 100 MB.
+public/video/*.mp4
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

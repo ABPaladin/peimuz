@@ -31,6 +31,8 @@ import rrPage3 from '../assets/images/partituri/rapsodia-romana-1/page-3.jpg';
 import rrPage4 from '../assets/images/partituri/rapsodia-romana-1/page-4.jpg';
 import rrPage5 from '../assets/images/partituri/rapsodia-romana-1/page-5.jpg';
 
+// --- Kahoot: logouri și screenshot-uri (src/assets/images/kahoot) ---
+import kahootLogo from '../assets/images/galerie/kahoot.jpg';
 // --- Cartea digitală: piese audio (src/assets/audio) ---
 import gwAudio from '../assets/audio/gramofon-waltz.mp3';
 import rrAudio from '../assets/audio/rapsodia-romana-1.mp3';
@@ -99,6 +101,22 @@ export const galleryItems = [
     photoLabel: 'Sesiune video online\nGoogle Meet',
   },
   {
+    cat: 'online',
+    title: 'Tur virtual al Instituției Gimnaziului „Dumitru Matcovschi"',
+    stage: 'Etapa I · Septembrie 2025',
+    desc: 'Elevii au făcut un tur virtual al instituției din Chișinău, prezentând sălile de clasă, biblioteca și spațiile comune. A fost o oportunitate de a se cunoaște mai bine și de a împărtăși mediul lor de învățare.',
+    caption: 'Tur virtual al școlii din Chișinău — Gimnaziul „Dumitru Matcovschi"',
+    tag: 'Online · Lansare',
+    photoLabel: 'Tur virtual al școlii\nGimnaziul „Dumitru Matcovschi”',
+    // Video local: pune fișierul în folderul `public/video/` cu EXACT acest nume.
+    // (Fișierele din public/ NU se importă sus — se referă direct prin URL, ca aici.)
+    // Pentru a schimba videoul, înlocuiește fișierul sau modifică numele de mai jos.
+    video: `${import.meta.env.BASE_URL}video/tur-virtual-matcovschi.mp4`,
+    // Opțional: o imagine-copertă (poster) pentru card și pentru previzualizarea videoului.
+    // Pune-o în public/video/ și decomentează linia de mai jos:
+    poster: `${import.meta.env.BASE_URL}video/tur-virtual-matcovschi.jpg`,
+  },
+  {
     cat: 'activitati',
     title: 'Concurs de Desene și Postere',
     stage: 'Etapa II · Octombrie 2025',
@@ -135,9 +153,9 @@ export const galleryItems = [
     // `fit: 'contain'` => imaginea se vede ÎNTREAGĂ (nu se taie). Util la pliante/documente cu text.
     fit: 'contain',
     // Buton „Kahoot" afișat sub descriere în Lightbox (vezi item.link în Lightbox.jsx).
-    link: 'https://create.kahoot.it/share/kahoot-eugen-doga-si-george-enescu/ef89d857-6275-434c-9978-a00815f2458b',
-    linkLabel: '🎮 Joacă Kahoot — Enescu & Doga ↗',
-    photoLabel: 'Expoziție postere\nEnescu · Doga',
+    // link: 'https://create.kahoot.it/share/kahoot-eugen-doga-si-george-enescu/ef89d857-6275-434c-9978-a00815f2458b',
+    // linkLabel: '🎮 Joacă Kahoot — Enescu & Doga ↗',
+    // photoLabel: 'Expoziție postere\nEnescu · Doga',
   },
   {
     cat: 'activitati',
@@ -165,6 +183,17 @@ export const galleryItems = [
       },
     ],
   },
+    {
+    cat: 'online',
+    title: "Kahoot — Testează-ți cunoștințele despre Enescu și Doga",
+    stage: 'Etapa II · Decembrie 2025',
+    desc: 'După ce au studiat viața și opera celor doi compozitori, elevii au avut ocazia să-și testeze cunoștințele printr-un joc Kahoot interactiv, creat special pentru acest proiect.',
+    caption: 'Elevii se distrează testându-și cunoștințele despre Enescu și Doga',
+    tag: 'Online · Activitate',
+    link: 'https://create.kahoot.it/share/kahoot-eugen-doga-si-george-enescu/ef89d857-6275-434c-9978-a00815f2458b',
+    linkLabel: '🎮 Joacă Kahoot — Enescu & Doga ↗',
+    img: kahootLogo,
+  },
   {
     cat: 'concurs',
     title: 'Decernarea Diplomei de Excelență',
@@ -175,7 +204,7 @@ export const galleryItems = [
     // Diplomele sunt verticale (A4) — `fit: 'contain'` le afișează întregi, fără tăiere.
     fit: 'contain',
     photoLabel: 'Expoziție diplome\nConcurs de Excelență',
-  },
+  }, 
 ];
 
 export const impactStats = [
